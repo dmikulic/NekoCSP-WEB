@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Sudoku solver</title>
+  <style>
+    td {
+        width: 40px;
+    }
+
+    input[type="text"] 
+    {
+        width: 40px;
+        height: 40px;
+        font-size: 30px;
+        border: 1px solid black;
+        text-align:center;
+        vertical-align: middle
+    }
+  </style>
+</head>
+<body>
+    <h2 id="output">This is CSP-SAT based Sudoku solver. It uses a basic DPLL procedure written in CoffeeScript</h2>
+    <script src="coffee-script.js"></script>
+    <script src="zeptosat.js"></script>
+    <script src="nekocsp.js"></script>
+
+    <script type="text/coffeescript">
+        output = document.getElementById("output")
+        out = (x) -> output.innerHTML = x
+
+        #######################
+
+        instance = [[2,5,0,0,3,0,9,0,1],
+                    [0,1,0,0,0,4,0,0,0],
+                    [4,0,7,0,0,0,2,0,8],
+                    [0,0,5,2,0,0,0,0,0],
+                    [0,0,0,0,9,8,1,0,0],
+                    [0,4,0,0,0,3,0,0,0],
+                    [0,0,0,3,6,0,0,7,2],
+                    [0,7,0,0,0,0,0,0,3],
+                    [9,0,3,0,0,0,6,0,4]]
+
+
+        ## creating an array of names [x11...x99]
+        arr = []
+        genname = (a,b) -> "x#{a}#{b}"
+        for x in [1..9]
+            arr.push((genname(x,y) for y in [1..9]))
+
+        solve_problem = () ->
+            p = new Problem
+
+            ## setting up the domains 
+            for x in arr
+                for name in x
+                    p.csp_variables[name] = [1..9]
+
+            for i in [0..8]
+                p.alldifferent(arr[i])
+
+            for i in [0..8]
+                p.alldifferent((x[i] for x in arr))
+
+            for i0 in [0..2]
+                for j0 in [0..2]
+                    li = []
+                    for i in [0..2]
+                        for j in [0..2]
+                            li.push(arr[3*i0 + i][3*j0 + j])
+                    p.alldifferent(li)
+
+            for i in [0..8]
+                for j in [0..8]
+                    if instance[i][j] != 0
+                        p.isequal(arr[i][j], instance[i][j])
+            
+
+            a = p.solve()
+
+            out JSON.stringify(a)
+            a
+            
+
+        ####################### GUI
+
+
+        # set up
+        for x in [0..8]
+            for y in [0..8]
+                name = arr[x][y]
+                value = instance[x][y]
+                if value
+                    document.getElementsByName(name)[0].value = value
+
+        # update changes
+        run = () ->
+            for x in [0..8]
+                for y in [0..8]
+                    name = arr[x][y]
+                    v = document.getElementsByName(name)[0].value
+                    if v
+                        instance[x][y] = v
+                    else
+                        instance[x][y] = 0
+
+            a = solve_problem()
+
+            for x in [0..8]
+                for y in [0..8]
+                    name = arr[x][y]
+                    if a[name]
+                        document.getElementsByName(name)[0].value = a[name]
+                    else
+                        document.getElementsByName(name)[0].value = ""
+
+        # remove predefined values
+        clear_all = () ->
+            for x in [0..8]
+                for y in [0..8]
+                    name = arr[x][y]
+                    document.getElementsByName(name)[0].value = ""
+
+
+
+        
+        window.run = run
+        window.clear_all = clear_all
+        
+    </script>
+
+
+<table>
+    
+<tr>
+    <td><input type="text" name="x11"/></td>
+    <td><input type="text" name="x12"/></td>
+    <td><input type="text" name="x13"/></td>
+    <td><input type="text" name="x14"/></td>
+    <td><input type="text" name="x15"/></td>
+    <td><input type="text" name="x16"/></td>
+    <td><input type="text" name="x17"/></td>
+    <td><input type="text" name="x18"/></td>
+    <td><input type="text" name="x19"/></td>
+</tr>
+
+<tr>
+    <td><input type="text" name="x21"/></td>
+    <td><input type="text" name="x22"/></td>
+    <td><input type="text" name="x23"/></td>
+    <td><input type="text" name="x24"/></td>
+    <td><input type="text" name="x25"/></td>
+    <td><input type="text" name="x26"/></td>
+    <td><input type="text" name="x27"/></td>
+    <td><input type="text" name="x28"/></td>
+    <td><input type="text" name="x29"/></td>
+</tr>
+    
+<tr>
+    <td><input type="text" name="x31"/></td>
+    <td><input type="text" name="x32"/></td>
+    <td><input type="text" name="x33"/></td>
+    <td><input type="text" name="x34"/></td>
+    <td><input type="text" name="x35"/></td>
+    <td><input type="text" name="x36"/></td>
+    <td><input type="text" name="x37"/></td>
+    <td><input type="text" name="x38"/></td>
+    <td><input type="text" name="x39"/></td>
+</tr>
+
+<tr>
+    <td><input type="text" name="x41"/></td>
+    <td><input type="text" name="x42"/></td>
+    <td><input type="text" name="x43"/></td>
+    <td><input type="text" name="x44"/></td>
+    <td><input type="text" name="x45"/></td>
+    <td><input type="text" name="x46"/></td>
+    <td><input type="text" name="x47"/></td>
+    <td><input type="text" name="x48"/></td>
+    <td><input type="text" name="x49"/></td>
+</tr>
+    
+<tr>
+    <td><input type="text" name="x51"/></td>
+    <td><input type="text" name="x52"/></td>
+    <td><input type="text" name="x53"/></td>
+    <td><input type="text" name="x54"/></td>
+    <td><input type="text" name="x55"/></td>
+    <td><input type="text" name="x56"/></td>
+    <td><input type="text" name="x57"/></td>
+    <td><input type="text" name="x58"/></td>
+    <td><input type="text" name="x59"/></td>
+</tr>
+    
+<tr>
+    <td><input type="text" name="x61"/></td>
+    <td><input type="text" name="x62"/></td>
+    <td><input type="text" name="x63"/></td>
+    <td><input type="text" name="x64"/></td>
+    <td><input type="text" name="x65"/></td>
+    <td><input type="text" name="x66"/></td>
+    <td><input type="text" name="x67"/></td>
+    <td><input type="text" name="x68"/></td>
+    <td><input type="text" name="x69"/></td>
+</tr>
+    
+<tr>
+    <td><input type="text" name="x71"/></td>
+    <td><input type="text" name="x72"/></td>
+    <td><input type="text" name="x73"/></td>
+    <td><input type="text" name="x74"/></td>
+    <td><input type="text" name="x75"/></td>
+    <td><input type="text" name="x76"/></td>
+    <td><input type="text" name="x77"/></td>
+    <td><input type="text" name="x78"/></td>
+    <td><input type="text" name="x79"/></td>
+</tr>
+    
+<tr>
+    <td><input type="text" name="x81"/></td>
+    <td><input type="text" name="x82"/></td>
+    <td><input type="text" name="x83"/></td>
+    <td><input type="text" name="x84"/></td>
+    <td><input type="text" name="x85"/></td>
+    <td><input type="text" name="x86"/></td>
+    <td><input type="text" name="x87"/></td>
+    <td><input type="text" name="x88"/></td>
+    <td><input type="text" name="x89"/></td>
+</tr>
+    
+<tr>
+    <td><input type="text" name="x91"/></td>
+    <td><input type="text" name="x92"/></td>
+    <td><input type="text" name="x93"/></td>
+    <td><input type="text" name="x94"/></td>
+    <td><input type="text" name="x95"/></td>
+    <td><input type="text" name="x96"/></td>
+    <td><input type="text" name="x97"/></td>
+    <td><input type="text" name="x98"/></td>
+    <td><input type="text" name="x99"/></td>
+</tr>
+
+ 
+</table>
+<button type="button"  onclick="run()">Solve</button>
+<button type="button"  onclick="clear_all()">Clear</button>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=ascii">
+  <style type="text/css">
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+pre { line-height: 125%; }
+body .hll { background-color: #ffffcc }
+body  { background: #f8f8f8; }
+body .c { color: #408080; font-style: italic } /* Comment */
+body .err { border: 1px solid #FF0000 } /* Error */
+body .k { color: #008000; font-weight: bold } /* Keyword */
+body .o { color: #666666 } /* Operator */
+body .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+body .cp { color: #BC7A00 } /* Comment.Preproc */
+body .c1 { color: #408080; font-style: italic } /* Comment.Single */
+body .cs { color: #408080; font-style: italic } /* Comment.Special */
+body .gd { color: #A00000 } /* Generic.Deleted */
+body .ge { font-style: italic } /* Generic.Emph */
+body .gr { color: #FF0000 } /* Generic.Error */
+body .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+body .gi { color: #00A000 } /* Generic.Inserted */
+body .go { color: #808080 } /* Generic.Output */
+body .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+body .gs { font-weight: bold } /* Generic.Strong */
+body .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #0040D0 } /* Generic.Traceback */
+body .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+body .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+body .kp { color: #008000 } /* Keyword.Pseudo */
+body .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #B00040 } /* Keyword.Type */
+body .m { color: #666666 } /* Literal.Number */
+body .s { color: #BA2121 } /* Literal.String */
+body .na { color: #7D9029 } /* Name.Attribute */
+body .nb { color: #008000 } /* Name.Builtin */
+body .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+body .no { color: #880000 } /* Name.Constant */
+body .nd { color: #AA22FF } /* Name.Decorator */
+body .ni { color: #999999; font-weight: bold } /* Name.Entity */
+body .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+body .nf { color: #0000FF } /* Name.Function */
+body .nl { color: #A0A000 } /* Name.Label */
+body .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+body .nt { color: #008000; font-weight: bold } /* Name.Tag */
+body .nv { color: #19177C } /* Name.Variable */
+body .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+body .w { color: #bbbbbb } /* Text.Whitespace */
+body .mf { color: #666666 } /* Literal.Number.Float */
+body .mh { color: #666666 } /* Literal.Number.Hex */
+body .mi { color: #666666 } /* Literal.Number.Integer */
+body .mo { color: #666666 } /* Literal.Number.Oct */
+body .sb { color: #BA2121 } /* Literal.String.Backtick */
+body .sc { color: #BA2121 } /* Literal.String.Char */
+body .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+body .s2 { color: #BA2121 } /* Literal.String.Double */
+body .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+body .sh { color: #BA2121 } /* Literal.String.Heredoc */
+body .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+body .sx { color: #008000 } /* Literal.String.Other */
+body .sr { color: #BB6688 } /* Literal.String.Regex */
+body .s1 { color: #BA2121 } /* Literal.String.Single */
+body .ss { color: #19177C } /* Literal.String.Symbol */
+body .bp { color: #008000 } /* Name.Builtin.Pseudo */
+body .vc { color: #19177C } /* Name.Variable.Class */
+body .vg { color: #19177C } /* Name.Variable.Global */
+body .vi { color: #19177C } /* Name.Variable.Instance */
+body .il { color: #666666 } /* Literal.Number.Integer.Long */
+
+  </style>
+</head>
+<body>
+<h2></h2>
+
+<div class="highlight"><pre><span class="s">&#39;&#39;&#39;</span>
+<span class="s">ZeptoSAT - 2013</span>
+
+<span class="s">Copyright (C) 2013 Darko Mikulic</span>
+
+<span class="s">Permission is hereby granted, free of charge, to any person obtaining a copy of this software and </span>
+<span class="s">associated documentation files (the &quot;Software&quot;), to deal in the Software without restriction,</span>
+<span class="s">including without limitation the rights to use, copy, modify, merge, publish, distribute,</span>
+<span class="s">sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is </span>
+<span class="s">furnished to do so, subject to the following conditions:</span>
+
+<span class="s">The above copyright notice and this permission notice shall be included in all copies or</span>
+<span class="s">substantial portions of the Software.</span>
+
+<span class="s">THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT</span>
+<span class="s">NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND</span>
+<span class="s">NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES</span>
+<span class="s">OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN</span>
+<span class="s">CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</span>
+<span class="s">&#39;&#39;&#39;</span>
+
+<span class="k">class</span> <span class="nx">SatSolver</span>
+    <span class="nv">constructor: </span><span class="nf">(formula) -&gt;</span>
+        <span class="vi">@formula = </span><span class="nx">formula</span>
+
+    <span class="nv">solve: </span><span class="nf">() -&gt;</span>
+        <span class="nx">solve_formula</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">formula</span><span class="p">)</span>
+
+
+<span class="nv">dpll = </span><span class="nf">(f,r) -&gt;</span>
+    <span class="p">[</span><span class="nx">f</span><span class="p">,</span> <span class="nx">r</span><span class="p">]</span> <span class="o">=</span> <span class="nx">unitpropagate</span><span class="p">(</span><span class="nx">f</span><span class="p">,</span> <span class="nx">r</span><span class="p">)</span>
+    <span class="p">[</span><span class="nx">f</span><span class="p">,</span> <span class="nx">r</span><span class="p">]</span> <span class="o">=</span> <span class="nx">pureLiteralAssign</span><span class="p">(</span><span class="nx">f</span><span class="p">,</span> <span class="nx">r</span><span class="p">)</span>
+    <span class="k">if</span> <span class="o">not</span> <span class="nx">f</span><span class="p">.</span><span class="nx">length</span>
+        <span class="nx">r</span>
+    <span class="k">else</span> <span class="k">if</span> <span class="nx">containsEmptyArr</span><span class="p">(</span><span class="nx">f</span><span class="p">)</span>
+        <span class="kc">false</span>
+    <span class="k">else</span>
+        <span class="nv">l = </span><span class="nx">chooseLiteral</span><span class="p">(</span><span class="nx">f</span><span class="p">)</span>
+        <span class="nv">t = </span><span class="nx">dpll</span><span class="p">(</span><span class="nx">simplify</span><span class="p">(</span><span class="nx">f</span><span class="p">,</span><span class="nx">l</span><span class="p">),</span> <span class="p">[</span><span class="nx">l</span><span class="p">].</span><span class="nx">concat</span><span class="p">(</span><span class="nx">r</span><span class="p">))</span>
+        <span class="k">if</span> <span class="nx">t</span> <span class="k">then</span> <span class="nx">t</span> <span class="k">else</span> <span class="nx">dpll</span><span class="p">(</span><span class="nx">simplify</span><span class="p">(</span><span class="nx">f</span><span class="p">,</span><span class="o">-</span><span class="nx">l</span><span class="p">),</span> <span class="p">[</span><span class="o">-</span><span class="nx">l</span><span class="p">].</span><span class="nx">concat</span><span class="p">(</span><span class="nx">r</span><span class="p">))</span>
+
+
+<span class="nv">simplify = </span><span class="nf">(f, l) -&gt;</span>
+    <span class="nv">simplifyClause = </span><span class="nf">(c, l) -&gt;</span> <span class="p">(</span><span class="nx">lx</span> <span class="k">for</span> <span class="nx">lx</span> <span class="k">in</span> <span class="nx">c</span> <span class="k">when</span> <span class="nx">lx</span> <span class="o">isnt</span> <span class="o">-</span><span class="nx">l</span><span class="p">)</span>
+    <span class="p">(</span><span class="nx">simplifyClause</span><span class="p">(</span><span class="nx">c</span><span class="p">,</span><span class="nx">l</span><span class="p">)</span> <span class="k">for</span> <span class="nx">c</span> <span class="k">in</span> <span class="nx">f</span> <span class="k">when</span> <span class="nx">l</span> <span class="o">not</span> <span class="k">in</span> <span class="nx">c</span><span class="p">)</span>
+
+
+<span class="nv">chooseLiteral = </span><span class="nf">(f) -&gt;</span>
+    <span class="nv">literals = </span><span class="nx">flatten</span><span class="p">(</span><span class="nx">f</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nx">literals</span> <span class="k">then</span> <span class="nx">literals</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">else</span> <span class="kc">false</span>
+
+
+<span class="nv">unitpropagate = </span><span class="nf">(f,r) -&gt;</span>
+    <span class="nv">u = </span><span class="nx">first</span><span class="p">((</span><span class="nx">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="nx">x</span> <span class="k">in</span> <span class="nx">f</span> <span class="k">when</span> <span class="nx">x</span><span class="p">.</span><span class="nx">length</span> <span class="o">is</span> <span class="mi">1</span><span class="p">))</span>
+    <span class="k">if</span> <span class="nx">u</span>
+        <span class="nx">unitpropagate</span><span class="p">(</span><span class="nx">simplify</span><span class="p">(</span><span class="nx">f</span><span class="p">,</span><span class="nx">u</span><span class="p">),</span> <span class="p">[</span><span class="nx">u</span><span class="p">].</span><span class="nx">concat</span><span class="p">(</span><span class="nx">r</span><span class="p">))</span>
+    <span class="k">else</span>
+        <span class="p">[</span><span class="nx">f</span><span class="p">,</span><span class="nx">r</span><span class="p">]</span>
+
+<span class="nv">pureLiteralAssign = </span><span class="nf">(f,r) -&gt;</span>
+    <span class="nv">literals = </span><span class="nx">flatten</span><span class="p">(</span><span class="nx">f</span><span class="p">).</span><span class="nx">unique</span><span class="p">()</span>
+    <span class="nv">pure = </span><span class="p">(</span><span class="nx">l</span> <span class="k">for</span> <span class="nx">l</span> <span class="k">in</span> <span class="nx">literals</span> <span class="k">when</span> <span class="o">-</span><span class="nx">l</span> <span class="o">not</span> <span class="k">in</span> <span class="nx">literals</span><span class="p">)</span>
+    <span class="nv">eliminate = </span><span class="nf">(c) -&gt;</span> <span class="nx">intersection</span><span class="p">(</span><span class="nx">pure</span><span class="p">,</span> <span class="nx">c</span><span class="p">).</span><span class="nx">length</span>
+    <span class="nv">nf = </span><span class="p">(</span><span class="nx">c</span> <span class="k">for</span> <span class="nx">c</span> <span class="k">in</span> <span class="nx">f</span> <span class="k">when</span> <span class="o">not</span> <span class="nx">eliminate</span><span class="p">(</span><span class="nx">c</span><span class="p">))</span>
+    <span class="p">[</span><span class="nx">nf</span><span class="p">,</span> <span class="nx">pure</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">r</span><span class="p">)]</span>
+
+<span class="cm">##################</span><span class="c1">#  utility functions  #####################</span>
+
+<span class="nv">intersection = </span><span class="nf">(a, b) -&gt;</span>
+  <span class="p">[</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nx">b</span><span class="p">,</span> <span class="nx">a</span><span class="p">]</span> <span class="k">if</span> <span class="nx">a</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="nx">b</span><span class="p">.</span><span class="nx">length</span>
+  <span class="nx">value</span> <span class="k">for</span> <span class="nx">value</span> <span class="k">in</span> <span class="nx">a</span> <span class="k">when</span> <span class="nx">value</span> <span class="k">in</span> <span class="nx">b</span>
+
+<span class="nb">Array</span><span class="o">::</span><span class="nv">unique = </span><span class="o">-&gt;</span>
+  <span class="nv">output = </span><span class="p">{}</span>
+  <span class="nx">output</span><span class="p">[</span><span class="nx">@</span><span class="p">[</span><span class="nx">key</span><span class="p">]]</span> <span class="o">=</span> <span class="nx">@</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span> <span class="k">for</span> <span class="nx">key</span> <span class="k">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">...</span><span class="nx">@length</span><span class="p">]</span>
+  <span class="nx">value</span> <span class="k">for</span> <span class="nx">key</span><span class="p">,</span> <span class="nx">value</span> <span class="k">of</span> <span class="nx">output</span>
+
+<span class="nv">containsEmptyArr = </span><span class="nf">(arr) -&gt;</span> <span class="p">(</span><span class="nx">x</span> <span class="k">for</span> <span class="nx">x</span> <span class="k">in</span> <span class="nx">arr</span> <span class="k">when</span> <span class="nx">x</span><span class="p">.</span><span class="nx">length</span> <span class="o">is</span> <span class="mi">0</span><span class="p">).</span><span class="nx">length</span>
+
+<span class="nv">flatten = </span><span class="nf">(arr) -&gt;</span> <span class="p">[].</span><span class="nx">concat</span><span class="p">.</span><span class="nx">apply</span><span class="p">([],</span><span class="nx">arr</span><span class="p">)</span>
+
+<span class="nv">first = </span><span class="nf">(arr) -&gt;</span> <span class="k">if</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">length</span> <span class="k">then</span> <span class="nx">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">else</span> <span class="kc">false</span>
+
+<span class="nv">absArr = </span><span class="nf">(arr) -&gt;</span> <span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="k">for</span> <span class="nx">x</span> <span class="k">in</span> <span class="nx">arr</span><span class="p">)</span>
+
+
+<span class="cm">##################</span>
+
+
+<span class="nv">solve_formula = </span><span class="nf">(f) -&gt;</span>
+    <span class="nv">result = </span><span class="nx">dpll</span><span class="p">(</span><span class="nx">f</span><span class="p">,</span> <span class="p">[])</span>
+    <span class="k">if</span> <span class="nx">result</span>
+        <span class="nv">allvars = </span><span class="nx">absArr</span><span class="p">(</span><span class="nx">flatten</span><span class="p">(</span><span class="nx">f</span><span class="p">)).</span><span class="nx">unique</span><span class="p">()</span>
+        <span class="nv">resvars = </span><span class="nx">absArr</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span>
+        <span class="nv">intersect = </span><span class="nx">intersection</span><span class="p">(</span><span class="nx">allvars</span><span class="p">,</span> <span class="nx">resvars</span><span class="p">)</span>
+        <span class="nv">missing = </span><span class="p">(</span><span class="nx">x</span> <span class="k">for</span> <span class="nx">x</span> <span class="k">in</span> <span class="nx">allvars</span> <span class="k">when</span> <span class="nx">x</span> <span class="o">not</span> <span class="k">in</span> <span class="nx">intersect</span><span class="p">)</span>
+        <span class="nx">missing</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">result</span><span class="p">).</span><span class="nx">sort</span><span class="p">(</span><span class="nf">(a,b) -&gt;</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span><span class="o">-</span><span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">(</span><span class="nx">b</span><span class="p">))</span>
+    <span class="k">else</span>
+        <span class="nx">result</span>
+
+<span class="nb">window</span><span class="p">.</span><span class="nv">SatSolver = </span><span class="nx">SatSolver</span>
+
+<span class="cm">#### TESTING</span>
+<span class="cm">###</span><span class="c1"># proba = [[1, 2, -3], [3, -4], [-1]]</span>
+<span class="c1">#### console.log  solve_formula(proba)</span>
+</pre></div>
+</body>
+</html>

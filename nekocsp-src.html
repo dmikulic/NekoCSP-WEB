@@ -1,0 +1,260 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=ascii">
+  <style type="text/css">
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+pre { line-height: 125%; }
+body .hll { background-color: #ffffcc }
+body  { background: #f8f8f8; }
+body .c { color: #408080; font-style: italic } /* Comment */
+body .err { border: 1px solid #FF0000 } /* Error */
+body .k { color: #008000; font-weight: bold } /* Keyword */
+body .o { color: #666666 } /* Operator */
+body .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+body .cp { color: #BC7A00 } /* Comment.Preproc */
+body .c1 { color: #408080; font-style: italic } /* Comment.Single */
+body .cs { color: #408080; font-style: italic } /* Comment.Special */
+body .gd { color: #A00000 } /* Generic.Deleted */
+body .ge { font-style: italic } /* Generic.Emph */
+body .gr { color: #FF0000 } /* Generic.Error */
+body .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+body .gi { color: #00A000 } /* Generic.Inserted */
+body .go { color: #808080 } /* Generic.Output */
+body .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+body .gs { font-weight: bold } /* Generic.Strong */
+body .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #0040D0 } /* Generic.Traceback */
+body .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+body .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+body .kp { color: #008000 } /* Keyword.Pseudo */
+body .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #B00040 } /* Keyword.Type */
+body .m { color: #666666 } /* Literal.Number */
+body .s { color: #BA2121 } /* Literal.String */
+body .na { color: #7D9029 } /* Name.Attribute */
+body .nb { color: #008000 } /* Name.Builtin */
+body .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+body .no { color: #880000 } /* Name.Constant */
+body .nd { color: #AA22FF } /* Name.Decorator */
+body .ni { color: #999999; font-weight: bold } /* Name.Entity */
+body .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+body .nf { color: #0000FF } /* Name.Function */
+body .nl { color: #A0A000 } /* Name.Label */
+body .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+body .nt { color: #008000; font-weight: bold } /* Name.Tag */
+body .nv { color: #19177C } /* Name.Variable */
+body .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+body .w { color: #bbbbbb } /* Text.Whitespace */
+body .mf { color: #666666 } /* Literal.Number.Float */
+body .mh { color: #666666 } /* Literal.Number.Hex */
+body .mi { color: #666666 } /* Literal.Number.Integer */
+body .mo { color: #666666 } /* Literal.Number.Oct */
+body .sb { color: #BA2121 } /* Literal.String.Backtick */
+body .sc { color: #BA2121 } /* Literal.String.Char */
+body .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+body .s2 { color: #BA2121 } /* Literal.String.Double */
+body .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+body .sh { color: #BA2121 } /* Literal.String.Heredoc */
+body .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+body .sx { color: #008000 } /* Literal.String.Other */
+body .sr { color: #BB6688 } /* Literal.String.Regex */
+body .s1 { color: #BA2121 } /* Literal.String.Single */
+body .ss { color: #19177C } /* Literal.String.Symbol */
+body .bp { color: #008000 } /* Name.Builtin.Pseudo */
+body .vc { color: #19177C } /* Name.Variable.Class */
+body .vg { color: #19177C } /* Name.Variable.Global */
+body .vi { color: #19177C } /* Name.Variable.Instance */
+body .il { color: #666666 } /* Literal.Number.Integer.Long */
+
+  </style>
+</head>
+<body>
+<h2></h2>
+
+<div class="highlight"><pre><span class="s">&#39;&#39;&#39;</span>
+<span class="s">NekoCSP - 2013</span>
+
+<span class="s">Copyright (C) 2013 Darko Mikulic</span>
+
+<span class="s">Permission is hereby granted, free of charge, to any person obtaining a copy of this software and </span>
+<span class="s">associated documentation files (the &quot;Software&quot;), to deal in the Software without restriction,</span>
+<span class="s">including without limitation the rights to use, copy, modify, merge, publish, distribute,</span>
+<span class="s">sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is </span>
+<span class="s">furnished to do so, subject to the following conditions:</span>
+
+<span class="s">The above copyright notice and this permission notice shall be included in all copies or</span>
+<span class="s">substantial portions of the Software.</span>
+
+<span class="s">THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT</span>
+<span class="s">NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND</span>
+<span class="s">NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES</span>
+<span class="s">OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN</span>
+<span class="s">CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</span>
+<span class="s">&#39;&#39;&#39;</span>
+
+
+<span class="k">class</span> <span class="nx">Problem</span>
+    <span class="nv">constructor: </span><span class="nf">() -&gt;</span>
+        <span class="vi">@sat_var_counter = </span><span class="mi">1</span>
+
+        <span class="vi">@csp_variables = </span> <span class="p">{}</span>
+        <span class="vi">@sat_variables = </span> <span class="p">{}</span>
+
+        <span class="vi">@constraints = </span>   <span class="p">[]</span>
+        <span class="vi">@cnf_formula = </span>   <span class="p">[]</span>
+
+        <span class="vi">@sat_solution = </span>  <span class="p">[]</span>
+        <span class="vi">@csp_solution = </span>  <span class="p">{}</span>
+
+    <span class="nv">convert: </span><span class="nf">() -&gt;</span>
+        <span class="nx">init_sat_variables</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
+        <span class="nx">at_least_one</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
+        <span class="nx">at_most_one</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
+        <span class="nx">convert_consraints</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
+
+    <span class="nv">solve: </span><span class="nf">() -&gt;</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span> <span class="s">&quot;Starting CSP conversion...&quot;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">convert</span><span class="p">()</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span> <span class="s">&quot;CSP conversion finished&quot;</span>
+        <span class="nv">sat = </span><span class="k">new</span> <span class="nx">SatSolver</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">cnf_formula</span><span class="p">)</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span> <span class="s">&quot;Starting SAT solving...&quot;</span>
+        <span class="nv">s = </span><span class="nx">sat</span><span class="p">.</span><span class="nx">solve</span><span class="p">()</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span> <span class="s">&quot;SAT solving finished&quot;</span>
+        <span class="k">if</span> <span class="o">not</span> <span class="nx">s</span>
+            <span class="kc">false</span>
+        <span class="k">else</span>
+            <span class="k">this</span><span class="p">.</span><span class="nv">sat_solution = </span><span class="nx">s</span>
+            <span class="nx">find_solution</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
+
+    <span class="nv">alldifferent: </span><span class="nf">(li) -&gt;</span>
+        <span class="nv">pairs = </span><span class="nx">combinations</span><span class="p">(</span><span class="nx">li</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="nv">genfunc = </span><span class="nf">(a,b) -&gt;</span> <span class="s">&quot;new Function(&#39;</span><span class="si">#{</span><span class="nx">a</span><span class="si">}</span><span class="s">&#39;,&#39;</span><span class="si">#{</span><span class="nx">b</span><span class="si">}</span><span class="s">&#39;, &#39;return </span><span class="si">#{</span><span class="nx">a</span><span class="si">}</span><span class="s"> != </span><span class="si">#{</span><span class="nx">b</span><span class="si">}</span><span class="s">;&#39;);&quot;</span>
+        <span class="k">for</span> <span class="nx">x</span> <span class="k">in</span> <span class="nx">pairs</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">constraints</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nb">eval</span><span class="p">(</span><span class="nx">genfunc</span> <span class="nx">x</span><span class="p">...))</span>
+
+    <span class="nv">isequal: </span><span class="nf">(variable, value) -&gt;</span>
+        <span class="nv">genfunc = </span><span class="nf">(a,b) -&gt;</span> <span class="s">&quot;new Function(&#39;</span><span class="si">#{</span><span class="nx">a</span><span class="si">}</span><span class="s">&#39;, &#39;return </span><span class="si">#{</span><span class="nx">a</span><span class="si">}</span><span class="s"> == </span><span class="si">#{</span><span class="nx">b</span><span class="si">}</span><span class="s">;&#39;);&quot;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">constraints</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nb">eval</span><span class="p">(</span><span class="nx">genfunc</span><span class="p">(</span><span class="nx">variable</span><span class="p">,</span><span class="nx">value</span><span class="p">)))</span>
+
+<span class="cm">############</span><span class="c1">##</span>
+
+
+<span class="nv">init_sat_variables = </span><span class="nf">(p) -&gt;</span>
+    <span class="k">for</span> <span class="nx">v</span> <span class="k">of</span> <span class="nx">p</span><span class="p">.</span><span class="nx">csp_variables</span>
+        <span class="nv">var_len = </span><span class="nx">p</span><span class="p">.</span><span class="nx">csp_variables</span><span class="p">[</span><span class="nx">v</span><span class="p">].</span><span class="nx">length</span>
+        <span class="nx">p</span><span class="p">.</span><span class="nx">sat_variables</span><span class="p">[</span><span class="nx">v</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nx">p</span><span class="p">.</span><span class="nx">sat_var_counter</span><span class="p">..</span><span class="nx">p</span><span class="p">.</span><span class="nx">sat_var_counter</span> <span class="o">+</span> <span class="nx">var_len</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="nx">p</span><span class="p">.</span><span class="nx">sat_var_counter</span> <span class="o">+=</span> <span class="nx">var_len</span>
+
+<span class="nv">at_least_one = </span><span class="nf">(p) -&gt;</span>
+    <span class="k">for</span> <span class="nx">v</span> <span class="k">of</span> <span class="nx">p</span><span class="p">.</span><span class="nx">csp_variables</span>
+        <span class="nx">p</span><span class="p">.</span><span class="nx">cnf_formula</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">p</span><span class="p">.</span><span class="nx">sat_variables</span><span class="p">[</span><span class="nx">v</span><span class="p">])</span>
+
+<span class="nv">at_most_one = </span><span class="nf">(p) -&gt;</span>
+    <span class="k">for</span> <span class="nx">v</span> <span class="k">of</span> <span class="nx">p</span><span class="p">.</span><span class="nx">csp_variables</span>
+        <span class="k">for</span> <span class="nx">c</span> <span class="k">in</span> <span class="nx">combinations</span><span class="p">(</span><span class="nx">p</span><span class="p">.</span><span class="nx">sat_variables</span><span class="p">[</span><span class="nx">v</span><span class="p">],</span> <span class="mi">2</span><span class="p">)</span>
+            <span class="nx">p</span><span class="p">.</span><span class="nx">cnf_formula</span><span class="p">.</span><span class="nx">push</span><span class="p">((</span><span class="o">-</span><span class="nx">x</span> <span class="k">for</span> <span class="nx">x</span> <span class="k">in</span> <span class="nx">c</span><span class="p">))</span>
+
+
+<span class="nv">convert_consraints = </span><span class="nf">(p) -&gt;</span>
+    <span class="k">for</span> <span class="nx">f</span> <span class="k">in</span> <span class="nx">p</span><span class="p">.</span><span class="nx">constraints</span>
+        <span class="nv">fvars = </span><span class="nx">getParams</span><span class="p">(</span><span class="nx">f</span><span class="p">)</span>
+        <span class="nv">fdoms = </span><span class="p">(</span><span class="nx">p</span><span class="p">.</span><span class="nx">csp_variables</span><span class="p">[</span><span class="nx">var_name</span><span class="p">]</span> <span class="k">for</span> <span class="nx">var_name</span> <span class="k">in</span> <span class="nx">fvars</span><span class="p">)</span>
+
+        <span class="nv">doms_product = </span><span class="p">[]</span>
+        <span class="nv">addProduct = </span><span class="nf">(x...) -&gt;</span> <span class="nx">doms_product</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span>
+        <span class="nx">lazyProduct</span><span class="p">(</span><span class="nx">fdoms</span><span class="p">,</span> <span class="nx">addProduct</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="nx">values</span> <span class="k">in</span> <span class="nx">doms_product</span>
+            <span class="nv">issat = </span><span class="nx">f</span> <span class="nx">values</span><span class="p">...</span>
+            <span class="k">if</span> <span class="o">not</span> <span class="nx">issat</span>
+                <span class="nv">idxs     = </span><span class="p">(</span><span class="nx">p</span><span class="p">.</span><span class="nx">csp_variables</span><span class="p">[</span><span class="nx">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]].</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">v</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="k">for</span> <span class="nx">v</span> <span class="k">in</span> <span class="nx">zip</span><span class="p">(</span><span class="nx">fvars</span><span class="p">,</span> <span class="nx">values</span><span class="p">))</span>
+                <span class="nv">sat_vars = </span><span class="p">(</span><span class="nx">p</span><span class="p">.</span><span class="nx">sat_variables</span><span class="p">[</span><span class="nx">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="nx">v</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span> <span class="k">for</span> <span class="nx">v</span> <span class="k">in</span> <span class="nx">zip</span><span class="p">(</span><span class="nx">fvars</span><span class="p">,</span><span class="nx">idxs</span><span class="p">))</span>
+                <span class="nv">clause   = </span><span class="p">(</span><span class="o">-</span><span class="nx">x</span> <span class="k">for</span> <span class="nx">x</span> <span class="k">in</span> <span class="nx">sat_vars</span><span class="p">)</span>
+                <span class="nx">p</span><span class="p">.</span><span class="nx">cnf_formula</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">clause</span><span class="p">)</span>
+
+
+<span class="cm">##################</span><span class="c1">#  utility functions  #####################</span>
+
+<span class="nv">reg = </span><span class="sr">/\(([\s\S]*?)\)/</span>
+
+<span class="nv">getParams = </span><span class="nf">(func) -&gt;</span> 
+    <span class="k">if</span> <span class="nx">func</span><span class="p">.</span><span class="nx">length</span>
+        <span class="nv">params = </span><span class="nx">reg</span><span class="p">.</span><span class="nx">exec</span><span class="p">(</span><span class="nx">func</span><span class="p">)[</span><span class="mi">1</span><span class="p">].</span><span class="nx">split</span><span class="p">(</span><span class="s">&#39;,&#39;</span><span class="p">)</span>
+        <span class="p">(</span><span class="nx">x</span><span class="p">.</span><span class="nx">trim</span><span class="p">()</span> <span class="k">for</span> <span class="nx">x</span> <span class="k">in</span> <span class="nx">params</span><span class="p">)</span>
+    <span class="k">else</span>
+        <span class="p">[]</span>
+
+<span class="nv">combinations = </span><span class="nf">(xs, m) -&gt;</span>
+    <span class="k">if</span> <span class="nx">m</span> <span class="o">==</span> <span class="mi">0</span>
+        <span class="p">[[]]</span>
+    <span class="k">else</span> <span class="k">if</span> <span class="nx">xs</span><span class="p">.</span><span class="nx">length</span> <span class="o">==</span> <span class="mi">0</span>
+        <span class="p">[]</span>
+    <span class="k">else</span>
+        <span class="nv">f = </span><span class="p">(</span><span class="nx">xs</span><span class="p">[..</span><span class="mi">0</span><span class="p">].</span><span class="nx">concat</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span> <span class="k">for</span> <span class="nx">a</span> <span class="k">in</span> <span class="nx">combinations</span><span class="p">(</span><span class="nx">xs</span><span class="p">[</span><span class="mi">1</span><span class="p">..],</span> <span class="nx">m</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+        <span class="nv">s = </span><span class="nx">combinations</span><span class="p">(</span><span class="nx">xs</span><span class="p">[</span><span class="mi">1</span><span class="p">..],</span> <span class="nx">m</span><span class="p">)</span>
+        <span class="nx">f</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span>
+
+
+<span class="nv">zip = </span><span class="nf">(arr1, arr2) -&gt;</span> <span class="p">([</span><span class="nx">arr1</span><span class="p">[</span><span class="nx">x</span><span class="p">],</span> <span class="nx">arr2</span><span class="p">[</span><span class="nx">x</span><span class="p">]]</span> <span class="k">for</span> <span class="nx">x</span> <span class="k">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">..</span><span class="nb">Math</span><span class="p">.</span><span class="nx">min</span><span class="p">(</span><span class="nx">arr1</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span> <span class="nx">arr2</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="c1">## Inline JavaScript - fast implementation of a Cartesian product</span>
+<span class="c1">## taken from: http://jsperf.com/lazy-cartesian-product/26</span>
+<span class="nv">lazyProduct = </span><span class="o">`</span><span class="nx">function</span> <span class="p">(</span><span class="nx">sets</span><span class="p">,</span><span class="nx">f</span><span class="p">,</span><span class="nx">context</span><span class="p">){</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">context</span><span class="p">)</span> <span class="nx">context</span><span class="o">=</span><span class="k">this</span><span class="p">;</span>
+    <span class="nx">var</span> <span class="nx">p</span><span class="o">=</span><span class="p">[],</span><span class="nx">max</span><span class="o">=</span><span class="nx">sets</span><span class="p">.</span><span class="nx">length</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="nx">lens</span><span class="o">=</span><span class="p">[];</span>
+    <span class="k">for</span> <span class="p">(</span><span class="nx">var</span> <span class="nx">i</span><span class="o">=</span><span class="nx">sets</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="nx">i</span><span class="o">--</span><span class="p">;)</span> <span class="nx">lens</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span><span class="o">=</span><span class="nx">sets</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">length</span><span class="p">;</span>
+    <span class="nx">function</span> <span class="nx">dive</span><span class="p">(</span><span class="nx">d</span><span class="p">){</span>
+        <span class="nx">var</span> <span class="nx">a</span><span class="o">=</span><span class="nx">sets</span><span class="p">[</span><span class="nx">d</span><span class="p">],</span> <span class="nx">len</span><span class="o">=</span><span class="nx">lens</span><span class="p">[</span><span class="nx">d</span><span class="p">];</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">d</span><span class="o">==</span><span class="nx">max</span><span class="p">)</span> <span class="k">for</span> <span class="p">(</span><span class="nx">var</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="nx">i</span><span class="o">&lt;</span><span class="nx">len</span><span class="p">;</span><span class="o">++</span><span class="nx">i</span><span class="p">)</span> <span class="nx">p</span><span class="p">[</span><span class="nx">d</span><span class="p">]</span><span class="o">=</span><span class="nx">a</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span> <span class="nx">f</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">context</span><span class="p">,</span><span class="nx">p</span><span class="p">);</span>
+        <span class="k">else</span>        <span class="k">for</span> <span class="p">(</span><span class="nx">var</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="nx">i</span><span class="o">&lt;</span><span class="nx">len</span><span class="p">;</span><span class="o">++</span><span class="nx">i</span><span class="p">)</span> <span class="nx">p</span><span class="p">[</span><span class="nx">d</span><span class="p">]</span><span class="o">=</span><span class="nx">a</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span> <span class="nx">dive</span><span class="p">(</span><span class="nx">d</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
+        <span class="nx">p</span><span class="p">.</span><span class="nx">pop</span><span class="p">();</span>
+    <span class="p">}</span>
+    <span class="nx">dive</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span><span class="o">`</span>
+
+<span class="cm">##################</span><span class="c1">#</span>
+
+
+<span class="nv">find_solution = </span><span class="nf">(p) -&gt;</span>
+    <span class="nv">positive = </span><span class="p">(</span><span class="nx">x</span> <span class="k">for</span> <span class="nx">x</span> <span class="k">in</span> <span class="nx">p</span><span class="p">.</span><span class="nx">sat_solution</span> <span class="k">when</span> <span class="nx">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="k">for</span> <span class="nx">sol</span> <span class="k">in</span> <span class="nx">positive</span>
+        <span class="k">for</span> <span class="nx">key</span><span class="p">,</span> <span class="nx">vals</span> <span class="k">of</span> <span class="nx">p</span><span class="p">.</span><span class="nx">sat_variables</span>
+            <span class="k">if</span> <span class="nx">sol</span> <span class="k">in</span> <span class="nx">vals</span>
+                <span class="nv">idx = </span><span class="nx">vals</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">sol</span><span class="p">)</span>
+                <span class="nx">p</span><span class="p">.</span><span class="nx">csp_solution</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span> <span class="o">=</span> <span class="nx">p</span><span class="p">.</span><span class="nx">csp_variables</span><span class="p">[</span><span class="nx">key</span><span class="p">][</span><span class="nx">idx</span><span class="p">]</span>
+    <span class="nx">p</span><span class="p">.</span><span class="nx">csp_solution</span>
+
+    
+
+
+<span class="nb">window</span><span class="p">.</span><span class="nv">Problem = </span><span class="nx">Problem</span>
+
+
+<span class="cm">###</span>
+<span class="cm">p = new Problem</span>
+
+<span class="cm">p.csp_variables[&#39;x&#39;] = [2,3,4,5,6]</span>
+
+<span class="cm">p.csp_variables[&#39;y&#39;] = [2,3,4,5,6]</span>
+
+<span class="cm">p.constraints = [</span>
+<span class="cm">    (x, y) -&gt; x + y &lt;= 7,</span>
+<span class="cm">    (x, y) -&gt; x == 3 and y == 4,</span>
+<span class="cm">]</span>
+
+<span class="cm">p.convert()</span>
+<span class="cm">p.sat_solution = [-1,2,-3,-4,-5,-6,-7,8,-9,-10]</span>
+
+<span class="cm">find_solution(p)</span>
+
+<span class="cm">console.log p.csp_solution</span>
+<span class="cm">###</span>
+</pre></div>
+</body>
+</html>

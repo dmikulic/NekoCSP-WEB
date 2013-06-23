@@ -1,0 +1,1 @@
+This is a NekoCSP port to CoffeeScript and afterwards compiled to JavaScript. Anonymous functions are used to model the problems which are then converted to the CNF form. The included minimal DPLL based SAT solver is then used to solve the problems.

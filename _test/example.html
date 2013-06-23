@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Test stranica</title>
+</head>
+<body>
+    <h2 id="output">This is a test</h2>
+    <script src="coffee-script.js"></script>
+    <script src="zeptosat.js"></script>
+    <script src="nekocsp.js"></script>
+
+    <script type="text/coffeescript">
+        output = document.getElementById("output")
+        out = (x) -> output.innerHTML = x
+
+        p = new Problem
+
+        p.csp_variables['x'] = [2,3,4,5,6]
+        p.csp_variables['y'] = [2,3,4,5,6]
+        p.csp_variables['z'] = [3,4,5]
+
+        p.constraints = [
+            (x, y) -> x + y <= 11
+            (y) -> y == 5
+        ]
+
+        p.alldifferent(['x', 'y', 'z'])
+        p.isequal("x", 4)
+        
+        a = p.solve()
+        out JSON.stringify(a)
+
+    </script>
+</body>
+</html>
